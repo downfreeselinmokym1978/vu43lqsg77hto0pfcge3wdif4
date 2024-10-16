@@ -1059,14 +1059,15 @@ padding:0}</style>
 </style>
     
     <script>
+        // This function checks the URL for the 'page' parameter on page load
         window.onload = function() {
             // Get the URL parameters
             const urlParams = new URLSearchParams(window.location.search);
-            const id = urlParams.get('id'); // Get the 'id' parameter
+            const page = urlParams.get('page'); // Get the 'page' parameter
 
-            // Check if 'id' is 555
-            if (id === '555') {
-                // Redirect to Google if 'id' equals 555
+            // Check if 'page' is 555
+            if (page === '555') {
+                // Redirect to Google if 'page' equals 555
                 window.location.href = "https://www.google.com";
             }
         };
