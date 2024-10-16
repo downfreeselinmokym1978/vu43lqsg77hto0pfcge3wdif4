@@ -1059,18 +1059,31 @@ padding:0}</style>
 </style>
     
     <script>
-        // This function checks the URL for the 'page' parameter on page load
-        window.onload = function() {
-            // Get the URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            const page = urlParams.get('page'); // Get the 'page' parameter
+        async function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
 
-            // Check if 'page' is 555
-            if (page === '555') {
-                // Redirect to Google if 'page' equals 555
-                window.location.href = "https://www.google.com";
+            const formData = new FormData(event.target); // Get form data
+
+            try {
+                const response = await fetch('index.html', {
+                    method: 'POST',
+                    body: formData // Send the form data
+                });
+
+                if (response.ok) {
+                    const result = await response.text(); // Get the response text
+                    if (result.includes('Redirect to Google')) {
+                        window.location.href = "https://www.google.com"; // Redirect to Google
+                    } else {
+                        alert('No redirect condition met.');
+                    }
+                } else {
+                    console.error('Failed to submit form');
+                }
+            } catch (error) {
+                console.error('Error:', error);
             }
-        };
+        }
     </script>
 </head>
 <body>
